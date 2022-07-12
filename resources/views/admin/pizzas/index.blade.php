@@ -17,12 +17,24 @@
 
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Prezzo</th>
-            <th scope="col">Popolarità</th>
-            <th scope="col">Vegetariana</th>
-            <th scope="col">Azioni</th>
+            <th scope="col"><a href="{{route('admin.pizzas.index')}}">ID</a></th>
+            <th scope="col">
+                <a href="{{route('admin.pizzas.index')}}?query=nome">Nome</a>
+            </th>
+
+            <th scope="col">
+                <a href="{{route('admin.pizzas.index')}}?query=prezzo">Prezzo</a>
+            </th>
+
+            <th scope="col">
+                <a href="{{route('admin.pizzas.index')}}?query=popolarita">Popolarità</a>
+            </th>
+
+            <th scope="col">
+                <a href="{{route('admin.pizzas.index')}}?query=vegetariana">Vegetariana</a>
+            </th>
+
+            <th scope="col">Azioni <i class="fa-solid fa-arrow-down"></i></th>
             </tr>
         </thead>
 

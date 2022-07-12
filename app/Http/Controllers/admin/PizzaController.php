@@ -17,7 +17,15 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        $pizze = Pizza::orderBy('id', 'DESC')->paginate(10);
+
+        // $base_query = $_GET['query'];
+        if(!array_key_exists('query',$_GET)){
+            $_GET['query'] = 'id';
+        }
+
+        $query = $_GET['query'];
+
+        $pizze = Pizza::orderBy($query, 'asc')->paginate(10);
 
         return view('admin.pizzas.index', compact('pizze'));
     }
