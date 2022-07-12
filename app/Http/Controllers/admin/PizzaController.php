@@ -100,6 +100,8 @@ class PizzaController extends Controller
 
         $pizza->update($data);
 
+        $pizza->ingredients()->sync($data['ingredients']);
+
         return redirect()->route('admin.pizzas.show', $pizza);
     }
 
