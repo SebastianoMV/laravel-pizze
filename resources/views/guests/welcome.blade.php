@@ -84,9 +84,10 @@
             </div>
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md ">
                     Pizzeria di Mario
                 </div>
+               
             </div>
         </div>
     </body>

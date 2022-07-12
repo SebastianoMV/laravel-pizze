@@ -92,6 +92,7 @@
 
         {{-- Popolarità --}}
         <div class="mb-3">
+            Popolarità:
             <select name="popolarita" id="popolarita">
 
                 <option value="" {{old('popolarita') == null ? 'selected' : ''}}>Non selezionato</option>
