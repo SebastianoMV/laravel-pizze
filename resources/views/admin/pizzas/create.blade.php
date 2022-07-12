@@ -114,6 +114,23 @@
             </select>
         </div>
 
+        {{-- Ingredienti --}}
+        <div class="mb-3">
+            @foreach ($ingredients as $ingredient)
+                <input
+                    type="checkbox"
+                    name="ingredients[]"
+                    id="ingredient{{ $loop->iteration }}"
+                    value="{{ $ingredient->id }}"
+                    @if(in_array($ingredient->id, old('ingredients',[]) ) ) checked @endif
+                >
+
+                <label for="ingredient{{ $loop->iteration }}" class="mr-3">{{ $ingredient->name }}</label>
+            @endforeach
+
+            <p id="error-ingredients" class="text-danger"></p>
+        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

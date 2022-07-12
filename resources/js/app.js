@@ -44,6 +44,7 @@ $().ready(function(){
             $('#error-nome').hide();
             $('#error-descrizione').hide();
             $('#error-prezzo').hide();
+            $('#error-ingredients').hide();
 
             // Campo nome
                 if($('#nome').val().length === 0){
@@ -99,6 +100,14 @@ $().ready(function(){
                     $('#prezzo').removeClass('is-invalid')
                 }
             //
+
+            //ci credeva solo Manu e aveva ragione.
+            checked = $("input[type=checkbox]:checked").length;
+
+            if(!checked) {
+                $('#error-ingredients').show('slow').text('Almeno un ingrediente deve essere selezionato').fadeOut(4000);
+                errors = true;
+            }
 
             if(errors === true){
                 event.preventDefault();

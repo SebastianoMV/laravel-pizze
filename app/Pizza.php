@@ -19,7 +19,7 @@ class Pizza extends Model
         'popolarita',
         'immagine',
         'prezzo',
-        'vegetariana'
+        'vegetariana',
     ];
 
     public static function generateSlug($nome){

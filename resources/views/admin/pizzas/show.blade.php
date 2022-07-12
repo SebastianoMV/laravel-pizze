@@ -24,12 +24,21 @@
 
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">prezzo: {{$pizza->prezzo}}&euro;</li>
-                <li class="list-group-item">Popolarità: 
+                <li class="list-group-item">Popolarità:
                 @if ($pizza->popolarita === null)
                     <td>0</td>
                 @else
                     <td>{{$pizza->popolarita}}</td>
                 @endif</li>
+
+                <li class="list-group-item">Ingredienti:
+                    <ul class="text-left">
+                        @foreach ($pizza->ingredients as $ingredient)
+                            <li>{{$ingredient->name}}</li>
+                        @endforeach
+
+                    </ul>
+                </li>
 
                 @if ($pizza->vegetariana)
                     <li class="list-group-item">Vegetariana: <img src="{{asset('image/13b01a3ed103ff17233aa8dcca6d5313-vegetarian-round-green-badge.png')}}" style="width: 35px; height: 35px" alt="logo vegetariano"></li>
