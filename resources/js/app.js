@@ -35,10 +35,13 @@ const app = new Vue({
 
 $().ready(function(){
 
-    formValidator($('#pizzaCreateForm'));
-    formValidator($('#pizzaEditForm'));
+    pizzaFormValidator($('#pizzaCreateForm'));
+    pizzaFormValidator($('#pizzaEditForm'));
 
-    function formValidator(form){
+    ingredientFormValidator($('#ingredientCreateForm'));
+    ingredientFormValidator($('#ingredientEditForm'));
+
+    function pizzaFormValidator(form){
         form.submit(function(event){
             let errors = false;
             $('#error-nome').hide();
@@ -117,4 +120,35 @@ $().ready(function(){
 
     }
 
+    function ingredientFormValidator(form){
+        form.submit(function(event){
+            let errors = false;
+            $('#error-name').hide();
+
+            if($('#name').val().length === 0){
+                $('#error-name').show('slow').text('Il campo nome è obbligatorio').fadeOut(4000);
+                $('#name').addClass('is-invalid');
+                errors = true;
+            }
+            else if($('#name').val().length < 3){
+                $('#error-name').show('slow').text('Il campo nome deve avere minimo 3 caratteri').fadeOut(4000);
+                $('#name').addClass('is-invalid');
+                errors = true;
+            }
+            else if($('#name').val().length > 50){
+                $('#error-name').show('slow').text('Il campo nome può avere massimo 50 caratteri').fadeOut(4000);
+                $('#name').addClass('is-invalid');
+                errors = true;
+            }else{
+                $('#name').removeClass('is-invalid')
+            }
+
+
+            if(errors === true){
+                event.preventDefault();
+            }
+
+        });
+
+    }
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Ingredient;
@@ -15,8 +16,8 @@ class IngredientController extends Controller
      */
     public function index()
     {
-        $ingredients = Ingredient::all();
-        return view('admin.ingredients.index' , compact('ingredients'));
+        $ingredients = Ingredient::orderBy('id','desc')->get();
+        return view('admin.ingredients.index', compact('ingredients'));
     }
 
     /**
@@ -39,13 +40,13 @@ class IngredientController extends Controller
     {
         $data = $request->all();
 
-        $data['slug'] = Ingredient::generateSlug($data['nome']);
+        $data['slug'] = Ingredient::generateSlug($data['name']);
 
         $new_ingredient = new Ingredient;
         $new_ingredient->fill($data);
         $new_ingredient->save();
 
-        return redirect()->route('admin.ingredients.show', $new_ingredient);
+        return redirect()->route('admin.ingredients.index');
     }
 
     /**
@@ -56,7 +57,7 @@ class IngredientController extends Controller
      */
     public function show(Ingredient $ingredient)
     {
-        return view('admin.ingredients.show', compact('ingredient'));
+        return view('admin.ingredients.index');
     }
 
     /**
@@ -83,13 +84,13 @@ class IngredientController extends Controller
     {
         $data = $request->all();
 
-        if($data['nome'] != $ingredient->nome){
-            $data['slug'] = Ingredient::generateSlug($data['nome']);
+        if($data['name'] != $ingredient->name){
+            $data['slug'] = Ingredient::generateSlug($data['name']);
         }
 
         $ingredient->update($data);
 
-        return redirect()->route('admin.ingredients.show', $ingredient);
+        return redirect()->route('admin.ingredients.index');
     }
 
     /**

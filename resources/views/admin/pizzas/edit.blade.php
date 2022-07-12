@@ -45,7 +45,7 @@
 
         {{-- Descrizione --}}
         <div class="mb-3">
-            <label for="descrizione" class="form-label">Ingredienti</label>
+            <label for="descrizione" class="form-label">Descrizione</label>
             <input
             type="text"
             class="form-control @error('descrizione') is-invalid @enderror"

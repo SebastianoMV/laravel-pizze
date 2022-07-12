@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Illuminate\Support\Str;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,8 +12,8 @@ class Ingredient extends Model
     }
 
     protected $fillable = [
-        'nome',
-        'slug'
+        'name',
+        'slug',
     ];
 
     public static function generateSlug($nome){
