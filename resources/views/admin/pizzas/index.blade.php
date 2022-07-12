@@ -6,7 +6,7 @@
 
     <h1>Lista pizze</h1>
 
-    @if(session('delete_success'))
+    @if(session('pizza_delete_success'))
         <div class="alert alert-danger d-flex justify-content-between" role="danger">
             <p>{{session('delete_success')}}</p>
             <a href="{{route('admin.pizzas.index')}}" class="btn btn-danger">X</a>

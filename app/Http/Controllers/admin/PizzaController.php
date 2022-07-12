@@ -115,7 +115,7 @@ class PizzaController extends Controller
     {
         $pizza->delete();
 
-        return redirect()->route('admin.pizzas.index')->with('delete_success', "La pizza $pizza->nome è stata eliminata correttamente!");
+        return redirect()->route('admin.pizzas.index')->with('pizza_delete_success', "La pizza $pizza->nome è stata eliminata correttamente!");
     }
 
     public function imageUploader($request, $data){
