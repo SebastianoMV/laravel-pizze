@@ -7,7 +7,7 @@
 
         </div>
         <div class="container">
-            <h1 class="text-center my-3">Pizzeria di Mario</h1>
+            <h1 class="text-center py-3">Pizzeria di Mario</h1>
         </div>
 
     </div>

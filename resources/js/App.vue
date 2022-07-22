@@ -31,6 +31,6 @@ import FooterComp from './components/partials/FooterComp.vue';
 
 <style lang="scss" scoped>
 main{
-    min-height: calc(100vh - 245px) ;
+    min-height: calc(100vh - 230px) ;
 }
 </style>

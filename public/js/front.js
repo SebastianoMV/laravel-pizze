@@ -2279,7 +2279,7 @@ var staticRenderFns = [function () {
   return _c("div", {
     staticClass: "container"
   }, [_c("h1", {
-    staticClass: "text-center my-3"
+    staticClass: "text-center py-3"
   }, [_vm._v("Pizzeria di Mario")])]);
 }];
 render._withStripped = true;
@@ -7129,7 +7129,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "main[data-v-f348271a] {\n  min-height: calc(100vh - 245px);\n}", ""]);
+exports.push([module.i, "main[data-v-f348271a] {\n  min-height: calc(100vh - 230px);\n}", ""]);
 
 // exports
 
