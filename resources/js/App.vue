@@ -1,6 +1,6 @@
 <template>
     <div>
-        <HeaderComp @lightNav="lightNav" @darkNav="darkNav" :flag="flag"/>
+        <HeaderComp />
 
         <div>
             <main class="">
@@ -8,7 +8,7 @@
             </main>
         </div>
 
-        <FooterComp :flag="flag" />
+        <FooterComp  />
     </div>
 </template>
 
@@ -21,24 +21,16 @@ import FooterComp from './components/partials/FooterComp.vue';
     components: { HeaderComp, FooterComp },
     data() {
         return {
-            flag: true,
+
         }
     },
     methods: {
-        lightNav(){
-            this.flag = true;
-            console.log(this.flag);
-        },
-        darkNav(){
-            this.flag = false;
-            console.log(this.flag);
-        }
     },
 }
 </script>
 
 <style lang="scss" scoped>
 main{
-    min-height: calc(100vh - 230px) ;
+    min-height: calc(100vh - 245px) ;
 }
 </style>

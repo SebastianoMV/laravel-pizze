@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="container " :class="flag ? 'color-white' : 'color-black'">
+        <div class="container " :class="$route.path == '/' ? 'color-white' : 'color-black'">
             <h1>ciao sono un footer</h1>
         </div>
     </footer>
@@ -9,9 +9,6 @@
 <script>
     export default {
         name: 'FooterComp',
-        props:{
-            flag: Boolean,
-        },
     }
 </script>
 

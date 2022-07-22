@@ -7,7 +7,7 @@
 
         </div>
         <div class="container">
-            <h1>Pizzeria di Mario</h1>
+            <h1 class="text-center my-3">Pizzeria di Mario</h1>
         </div>
 
     </div>
@@ -20,12 +20,14 @@
 </script>
 
 <style lang="scss" scoped>
+
 video{
+    bottom: 0;
+    left: 0;
     max-width: 100%;
     position: absolute;
-    right: 0;
-    bottom:0;
     z-index: -1;
+
 }
 .layer-video{
     top: 0;
@@ -40,6 +42,7 @@ video{
 
 h1{
     color: white;
+    font-size: 60px
 }
 
 

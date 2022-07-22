@@ -1919,20 +1919,9 @@ __webpack_require__.r(__webpack_exports__);
     FooterComp: _components_partials_FooterComp_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {
-      flag: true
-    };
+    return {};
   },
-  methods: {
-    lightNav: function lightNav() {
-      this.flag = true;
-      console.log(this.flag);
-    },
-    darkNav: function darkNav() {
-      this.flag = false;
-      console.log(this.flag);
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -2086,10 +2075,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'FooterComp',
-  props: {
-    flag: Boolean
-  }
+  name: 'FooterComp'
 });
 
 /***/ }),
@@ -2105,9 +2091,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'HeaderComp',
-  props: {
-    flag: Boolean
-  },
   data: function data() {
     return {};
   }
@@ -2184,19 +2167,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("HeaderComp", {
-    attrs: {
-      flag: _vm.flag
-    },
-    on: {
-      lightNav: _vm.lightNav,
-      darkNav: _vm.darkNav
-    }
-  }), _vm._v(" "), _c("div", [_c("main", {}, [_c("router-view")], 1)]), _vm._v(" "), _c("FooterComp", {
-    attrs: {
-      flag: _vm.flag
-    }
-  })], 1);
+  return _c("div", [_c("HeaderComp"), _vm._v(" "), _c("div", [_c("main", {}, [_c("router-view")], 1)]), _vm._v(" "), _c("FooterComp")], 1);
 };
 
 var staticRenderFns = [];
@@ -2307,7 +2278,9 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v("Pizzeria di Mario")])]);
+  }, [_c("h1", {
+    staticClass: "text-center my-3"
+  }, [_vm._v("Pizzeria di Mario")])]);
 }];
 render._withStripped = true;
 
@@ -2522,7 +2495,7 @@ var render = function render() {
 
   return _c("footer", [_c("div", {
     staticClass: "container",
-    "class": _vm.flag ? "color-white" : "color-black"
+    "class": _vm.$route.path == "/" ? "color-white" : "color-black"
   }, [_c("h1", [_vm._v("ciao sono un footer")])])]);
 };
 
@@ -2549,7 +2522,7 @@ var render = function render() {
 
   return _c("header", [_c("nav", {
     staticClass: "container navbar navbar-expand-lg",
-    "class": _vm.flag ? "navbar-dark" : "navbar-light"
+    "class": _vm.$route.path == "/" ? "navbar-dark" : "navbar-light"
   }, [_c("div", {
     staticClass: "collapse navbar-collapse d-flex justify-content-between",
     attrs: {
@@ -2570,11 +2543,6 @@ var render = function render() {
       to: {
         name: "home"
       }
-    },
-    nativeOn: {
-      click: function click($event) {
-        return _vm.$emit("lightNav");
-      }
     }
   }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item mx-3"
@@ -2583,11 +2551,6 @@ var render = function render() {
     attrs: {
       to: {
         name: "pizzas"
-      }
-    },
-    nativeOn: {
-      click: function click($event) {
-        return _vm.$emit("darkNav");
       }
     }
   }, [_vm._v("Pizze")])], 1), _vm._v(" "), _c("li", {
@@ -2598,11 +2561,6 @@ var render = function render() {
       to: {
         name: "about"
       }
-    },
-    nativeOn: {
-      click: function click($event) {
-        return _vm.$emit("darkNav");
-      }
     }
   }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item mx-3"
@@ -2611,11 +2569,6 @@ var render = function render() {
     attrs: {
       to: {
         name: "contacts"
-      }
-    },
-    nativeOn: {
-      click: function click($event) {
-        return _vm.$emit("darkNav");
       }
     }
   }, [_vm._v("Contatti")])], 1)]), _vm._v(" "), _c("div", [_vm._v("social")])])])]);
@@ -7176,7 +7129,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "main[data-v-f348271a] {\n  min-height: calc(100vh - 230px);\n}", ""]);
+exports.push([module.i, "main[data-v-f348271a] {\n  min-height: calc(100vh - 245px);\n}", ""]);
 
 // exports
 
@@ -7195,7 +7148,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "video[data-v-4b10c5b8] {\n  max-width: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n}\n.layer-video[data-v-4b10c5b8] {\n  top: 0;\n  left: 0;\n  max-width: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n  background-color: rgba(0, 0, 0, 0.6);\n}\nh1[data-v-4b10c5b8] {\n  color: white;\n}", ""]);
+exports.push([module.i, "video[data-v-4b10c5b8] {\n  bottom: 0;\n  left: 0;\n  max-width: 100%;\n  position: absolute;\n  z-index: -1;\n}\n.layer-video[data-v-4b10c5b8] {\n  top: 0;\n  left: 0;\n  max-width: 100%;\n  position: absolute;\n  right: 0;\n  bottom: 0;\n  z-index: -1;\n  background-color: rgba(0, 0, 0, 0.6);\n}\nh1[data-v-4b10c5b8] {\n  color: white;\n  font-size: 60px;\n}", ""]);
 
 // exports
 
