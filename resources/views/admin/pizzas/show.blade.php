@@ -47,6 +47,7 @@
                 @endif
 
                 <li class="list-group-item">
+
                     <a href="{{route('admin.pizzas.edit', $pizza)}}" class="btn btn-success">Modifica</a>
 
                     <form

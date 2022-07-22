@@ -9,14 +9,11 @@
 
     <title>@yield('title')</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     {{-- JQUERY --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     {{-- Javascript --}}
-    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/admin.js')}}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,8 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+    <link href="{{ asset('css/admin/style.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -39,7 +36,7 @@
                 @yield('content')
             </div>
         </main>
-        
+
     </div>
 </body>
 </html>

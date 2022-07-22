@@ -16,19 +16,37 @@ class PizzaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+{
+        # Array contenente i campi della tabella pizza che è possibile filtrare
+        $accepted_queries =
+        [
+                'id' => 'id',
+                'nome' => 'nome',
+                'prezzo' => 'prezzo',
+                'popolarita' => 'popolarita',
+                'vegetariana' =>'vegetariana'
+        ];
 
-        // $base_query = $_GET['query'];
-        if(!array_key_exists('query',$_GET)){
+        /* Se non è stato passato nessun parametro in $ GET oppure se il parametro non è
+        contenuto nell'array dei campi, si assegna di default id al parametro $_GET */
+        if(!array_key_exists('query', $_GET) || !array_key_exists($_GET['query'],
+        $accepted_queries)){
             $_GET['query'] = 'id';
         }
 
         $query = $_GET['query'];
 
-        $pizze = Pizza::orderBy($query, 'asc')->paginate(10);
 
-        return view('admin.pizzas.index', compact('pizze'));
-    }
+        # Si effettua la query con il parametro passato in $ GET
+        $pizze = Pizza::orderBy($query,'asc')->paginate(10);
+
+
+        return view('admin.pizzas.index' , compact ('pizze'));
+
+
+}
+
+
 
     /**
      * Show the form for creating a new resource.

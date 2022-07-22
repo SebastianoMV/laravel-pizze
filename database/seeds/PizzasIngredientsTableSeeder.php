@@ -38,9 +38,7 @@ class PizzasIngredientsTableSeeder extends Seeder
             if(count($pizza->ingredients) == 0){
                 $ingredient_id = Ingredient::inRandomOrder()->take(rand(1 , 4))->select('id')->get();
                 foreach ($ingredient_id as $ingredient) {
-                    if(!$pizza->ingredients->contains($ingredient_id)){
-                        $pizza->ingredients()->attach($ingredient_id);
-                    }
+                    $pizza->ingredients()->attach($ingredient->id);
                 }
             }
         }

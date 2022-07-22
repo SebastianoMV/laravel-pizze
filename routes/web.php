@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guests.welcome');
-})->name('home');
 
 Auth::routes();
 
@@ -28,3 +25,7 @@ Route::middleware('auth')
         Route::resource('pizzas', 'PizzaController');
         Route::resource('ingredients', 'IngredientController');
     });
+
+Route::get('{any?}', function(){
+    return view('guests.home');
+})->where('any', '.*')->name('home');

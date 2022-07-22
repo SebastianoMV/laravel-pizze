@@ -13,7 +13,7 @@ class IngredientsTableSeeder extends Seeder
      */
     public function run()
     {
-        $ingredients = 
+        $ingredients =
         [
             'pomodoro',
             'mozzarella',
@@ -41,3 +41,4 @@ class IngredientsTableSeeder extends Seeder
         };
     }
 }
+
