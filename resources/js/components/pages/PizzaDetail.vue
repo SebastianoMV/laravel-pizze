@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>Dettaglio pizza</h1>
         <div class="card" style="min-width: 250px;">
                 <img :src="pizza.immagine ? '/image/' + pizza.immagine : '/image/scatola_pizza.png' " class="card-img-top" alt="">

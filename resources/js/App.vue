@@ -1,14 +1,14 @@
 <template>
     <div>
-        <HeaderComp />
+        <HeaderComp @lightNav="lightNav" @darkNav="darkNav" :flag="flag"/>
 
         <div>
-            <main class="container">
+            <main class="">
                 <router-view></router-view>
             </main>
         </div>
 
-        <FooterComp />
+        <FooterComp :flag="flag" />
     </div>
 </template>
 
@@ -18,12 +18,27 @@ import FooterComp from './components/partials/FooterComp.vue';
 
     export default {
     name: "App",
-    components: { HeaderComp, FooterComp }
+    components: { HeaderComp, FooterComp },
+    data() {
+        return {
+            flag: true,
+        }
+    },
+    methods: {
+        lightNav(){
+            this.flag = true;
+            console.log(this.flag);
+        },
+        darkNav(){
+            this.flag = false;
+            console.log(this.flag);
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 main{
-    min-height: calc(100vh - 210px) ;
+    min-height: calc(100vh - 230px) ;
 }
 </style>
